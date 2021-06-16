@@ -1,0 +1,42 @@
+
+body {
+    background-color: rgb(197, 221, 220);
+}
+.cabecera {
+    /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/images/cabecera.jpg'); */
+    background-image: url('../images/cabecera.jpg');
+    background-repeat: no-repeat;  
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    color: #663F37;
+}
+
+.enlace-personal {
+    color: whitesmoke;
+    text-decoration: none;
+}
+.argus:hover {
+    color: green;
+    text-decoration: none;
+}
+
+.info-producto {
+    margin-bottom: 1rem;
+}
+
+.info-resultado {
+    margin-bottom: 1rem;
+}
+
+.dato-form {
+    margin-bottom: 1rem;
+}
+
+.piePagina {
+    background-color: rgb(58, 52, 52);
+    color: whitesmoke;
+    padding: 1em 0;
+    
+    text-align: center;
+}

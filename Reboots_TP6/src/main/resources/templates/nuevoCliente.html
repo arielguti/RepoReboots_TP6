@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Cliente</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/5.15.2/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header th:replace="layouts/header :: header"></header>
+    <div class="container dato-form">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-8">
+                <div class="card border-primary">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Registro de nuevo cliente</h4>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/cliente/guardar}" th:object="${cliente}" method="POST">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="badge badge-primary">Tipo Documento</label>
+                                        <select th:field="*{tipoDocumento}" class="form-control">
+                                            <option value="DNI">DNI</option>
+                                            <option value="Pasaporte">Pasaporte</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nro" class="badge badge-primary">Nro. Documento</label>            
+	                                    <input class="form-control" type="number" id="nro" th:field="*{nroDocumento}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="badge badge-primary" for="nya">Apellido y Nombre </label>            
+	                            <input class="form-control" type="text" id="nya" th:field="*{nombreApellido}" placeholder="Ingrese apellido y nombre">
+                            </div>
+                            <div class="form-group">
+                                <label class="badge badge-primary" for="email">E-mail </label>            
+	                            <input class="form-control" type="email" id="email" th:field="*{email}" placeholder="yo@ejemplo.com">
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="badge badge-primary" for="fechaNac">Fecha de nacimiento</label>            
+	                                    <input class="form-control" type="date" id="fechaNac"  th:field="*{fechaNacimiento}">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="badge badge-primary" for="fechaUltimaCompra">Fecha Última Compra</label>            
+	                                    <input class="form-control" type="date" id="fechaUltimaCompra"  th:field="*{fechaUltimaCompra}">    
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="badge badge-primary" for="codigoArea">Código de Área</label>            
+	                                    <input class="form-control" type="number" id="codigoArea" th:field="*{codigoAreaTelefono}">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="badge badge-primary" for="nroTel">Número de teléfono</label>            
+	                                    <input class="form-control" type="number" id="nroTel" th:field="*{telefono}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i> Agregar Cliente</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-4 d-none d-sm-block">                
+                <aside th:replace="layouts/aside :: aside"></aside>                                
+            </div>            
+        </div>
+    </div>
+    <footer th:replace="layouts/footer :: footer"></footer>
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>    
+    <script th:src="@{/webjars/popper.js/1.16.1-lts/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+</body>
+</html>

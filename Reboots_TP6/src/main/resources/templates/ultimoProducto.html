@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle ultimo producto</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/5.15.2/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header th:replace="layouts/header :: header"></header>
+
+    <div class="container info-producto">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-8">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-center">Producto Ingresado</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Código: <span th:text="${ultimoProducto.codigo}"></span>
+                            <br>
+                            Nombre: <span th:text="${ultimoProducto.nombre}"></span>
+                            <br>
+                            Precio: <span th:text="${ultimoProducto.precio}"></span>
+                            <br>
+                            Marca: <span th:text="${ultimoProducto.marca}"></span>
+                            <br>
+                            Stock: <span th:text="${ultimoProducto.stock}"></span>
+                        </h3>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="/producto" class="btn btn-primary">Cargar nuevo producto</a> 
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-lg-4 d-none d-sm-block">                
+                <aside th:replace="layouts/aside :: aside"></aside>                                
+            </div>            
+        </div>
+    </div>
+
+    <footer th:replace="layouts/footer :: footer"></footer>
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>    
+    <script th:src="@{/webjars/popper.js/1.16.1-lts/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+</body>
+</html>
