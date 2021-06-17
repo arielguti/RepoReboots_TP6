@@ -2,6 +2,7 @@ package ar.edu.unju.fi.tp6.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,7 +21,7 @@ public class Compra {
 	private int id;
 
 	@Autowired
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="PRO_cod")
 	private Producto producto;
 	
